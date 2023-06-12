@@ -2,19 +2,6 @@ import React from "react";
 import "./landing.css";
 import InfoSeksjon from "./InfoSeksjon";
 
-/*
-    FIKSE
-        - gjøre hvit sektor responsiv
-        - fortsette med de to siste sonene
-
-    TIPS
-        - Sjekk hvordan flex properties wrapper sammen
-        - kombiner det med sm: og md: for padding og bredde 
-
-    MÅL
-        - Hvis jeg klarer å gjøre ferdig forsiden i morgen helt responsiv uten feil, det er sykjt bra jobba
-*/
-
 const LandingInfo = ({ bilde, tekst }) => {
 
     const hvemervi = "Vi er en gjeng bestående primært av frivillige fra 2. og 3. klasse, samt institutt. Det vi ønsker oss, er at dere som bedrift har lyst til å stille med en landmåler som har ett måleoppdrag å vise studenter. Hvis en student begynner som landmåler hos dere, hva ville vært en typisk halv dag på jobben?";
@@ -24,7 +11,7 @@ const LandingInfo = ({ bilde, tekst }) => {
     return(
         <>
             {/* white sector */}
-            <InfoSeksjon tekst={hvemervi} bilde={require("../images/gruppa/duggstad-maale.jpeg")} bakgrunn={"bg-white"} overskrift={"Hvem er vi?"} />
+            <InfoSeksjon tekst={hvemervi} bilde={require("../images/gruppa/hele-gjengen.jpeg")} bakgrunn={"bg-white"} overskrift={"Hvem er vi?"} />
 
             {/* TRANSITION */}
             <section className="relative mt-64">
@@ -47,7 +34,7 @@ const LandingInfo = ({ bilde, tekst }) => {
                 </div>
             </section>
 
-            <InfoSeksjon tekst={vartformal} bilde={require("../images/gruppa/maale-ute-bra.jpeg")} bakgrunn={"bg-[#E2DFD2]"} overskrift={"Vårt formål"} />
+            <InfoSeksjon tekst={vartformal} bilde={require("../images/gruppa/crop-maale-ute.jpeg")} bakgrunn={"bg-[#E2DFD2]"} overskrift={"Vårt formål"} />
 
         </>
     );

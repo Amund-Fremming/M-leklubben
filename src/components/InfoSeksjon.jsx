@@ -44,9 +44,9 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
 
     return(
         <>
-            <section className={`${bakgrunn} sm:pt-10 md:pt-10 lg:pt-10 xl:pt-10 w-full flex`}>
+            <section className={`${bakgrunn} sm:pt-10 md:pt-0 lg:pt-2 xl:pt-10 w-full flex bottom-0`}>
                 
-                <div className="flex align-center justify-around flex-wrap w-full h-screen sm:mb-[600px] mb-[100px] md:mb-[200px] lg:mb-0 xl:mb-0">
+                <div className="pt-[10vh] pb-[10vh] lg:pb-[40vh] xl:pb-[40vh] flex align-center justify-around flex-wrap w-full sm:mb-[400px] mb-[100px] md:mb-[200px] lg:mb-0 xl:mb-0">
 
                     <div className="pt-[100px] flex flex-col sm:m-4 md:ml-2 lg:ml-[1vw] xl:ml-[1vw] md:w-[400px] xl:w-[40vw] m-4">
                         <motion.h2
@@ -54,7 +54,7 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
                             initial="hidden"
                             variants={boxVariants(0)}
                             animate={control}
-                            className={`${styles.heroHeadText} xs:pt-8 sm:pt-8 md:mt-32  xs:text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl pb-4 font-bold font-ac w-full text-4xl`}
+                            className={`${styles.heroHeadText} xs:pt-8  xs:text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl pb-4 font-bold font-ac w-full text-4xl`}
                         >
                             {overskrift}
                         </motion.h2>
@@ -70,13 +70,13 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
                         </motion.p>
                     </div>
 
-                    <div className="w-full m-4 flex sm:w-[850px] md:w-[350px] lg:w-[35vw] xl:w-[25vw] justify-center items-center hover:scale-110 duration-200">
+                    <div className="pt-20 w-full m-4 flex sm:w-[750px] md:w-[350px] lg:w-[450px] xl:w-[33vw] justify-center items-center hover:scale-110 duration-200">
                         <motion.img
                             ref={ref2}
                             variants={boxVariants(1.2)}
                             initial="hidden"
                             animate={control2}
-                            className="object-cover rounded-xl md:w-[500px] shadow-slate-800 shadow-2xl"
+                            className="object-cover rounded-xl md:w-[500px] lg:w-[700px] xl:w-[700px] shadow-slate-800 shadow-2xl w-[90%]"
                             src={bilde}
                         />
                     </div>

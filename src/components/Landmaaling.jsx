@@ -302,7 +302,7 @@ const Landmaaling = () => {
 
                 </div>
             </div>
-            <Footer bg={"bg-white"} />
+            <Footer bg={"white"} />
         </>
     );
 }

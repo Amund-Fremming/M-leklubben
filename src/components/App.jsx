@@ -11,7 +11,7 @@ const App = () => {
       <Navbar />
       <Parallax />
       <LandingInfo />
-      <Footer bg={"bg-[#E2DFD2]"} />
+      <Footer bg={"white"} />
     </>
   );
 }
