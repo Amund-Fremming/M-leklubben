@@ -7,7 +7,7 @@ import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import Blogbox from "./Blogbox";
 
-document.body.style.backgroundColor = "#1D1E20"
+document.body.style.backgroundColor = "#1D1E20";
 let globalInit = false;
 
 const Blog = () => {

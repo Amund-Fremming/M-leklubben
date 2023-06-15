@@ -84,7 +84,7 @@ const Parallax = () => {
                 />
             </section>
             {/* Denne delen vises fra sm/mobile */}
-            <section className="overflow-hidden top-0 h-full relative md:hidden lg:hidden xl:hidden xxl:hidden sm:flex flex justify-center items-center w-full">
+            <section className="overflow-hidden top-0 relative md:hidden lg:hidden xl:hidden xxl:hidden sm:flex xs:flex h-screen flex justify-center items-center w-full">
                 <div className="bg-[#E09A32] h-[300px] w-full absolute top-0 left-0" />
                 <img
                     className='absolute top-[200px] left-0 w-[100%] pointer-events-none'

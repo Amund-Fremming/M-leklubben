@@ -6,6 +6,8 @@ import Footer from "./Footer";
 
 const App = () => {
 
+  document.body.style.backgroundColor = "white";
+
   return(
     <>
       <Navbar bg={"[#E09A32]"} />
