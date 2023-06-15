@@ -7,6 +7,8 @@ import Footer from "./Footer";
 
 const Landmaaling = () => {
 
+    document.body.style.backgroundColor = "white"
+
     const useInViewAnimation = (delay) => {
         const control = useAnimation();
         const [ref, inView] = useInView();
@@ -38,7 +40,7 @@ const Landmaaling = () => {
 
     return(
         <>
-            <Navbar />
+            <Navbar bg={"[#E09A32]"} />
             <div className="mt-20" />
             <div className="flex justify-center items-center">
                 <img
@@ -48,7 +50,7 @@ const Landmaaling = () => {
                 />
             </div>
             
-            <div className="flex justify-center items-center pt-6 px-[10vw] md:px-[20vw] lg:px-[20vw] xl:px-[25vw] top-10">
+            <div className="pb-64 flex justify-center items-center pt-6 px-[10vw] md:px-[20vw] lg:px-[20vw] xl:px-[25vw] top-10">
                 <div className="flex flex-col justify-center items-start">
 
                     <motion.h1

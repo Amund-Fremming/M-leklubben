@@ -4,7 +4,7 @@ import { BsInstagram } from "react-icons/bs";
 import Menu from "../icons/Menu";
 import Close from "../icons/Close";
 
-const Navbar = () => {
+const Navbar = ({ bg }) => {
 
     let [ open, setOpen ] = useState(false);
 
@@ -15,7 +15,7 @@ const Navbar = () => {
     return(
         <>
             <div className=' w-full top-0 fixed left-0 z-50'>
-                <div id="navbar" className='md:flex items-center justify-between bg-[#E09A32] py-4 md:px-10 px-7 h-20'>
+                <div id="navbar" className={`md:flex items-center justify-between bg-${bg} py-4 md:px-10 px-7 h-20`}>
                     <div className='cursor-pointer flex items-center ml-8'>
                         {/* Legg til logo her!! */}
                     </div>
@@ -26,7 +26,7 @@ const Navbar = () => {
                         : <Menu />
                     }
                     </div>
-                    <ul className={`md:flex md:items-center md:pb-0 pb-18 absolute md:static bg-[#E09A32] md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0
+                    <ul className={`md:flex md:items-center md:pb-0 pb-18 absolute md:static bg-${bg} md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0
                          pl-9 transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-490px]'}`}>
                         <li className='md:ml-8 pt-4 text-xl'>
                         </li>

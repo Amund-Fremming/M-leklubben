@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landmaaling from './components/Landmaaling';
 import Aktivitet from './components/Aktivitet';
+import Blog from "./components/Blog";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/aktivitet",
-    element: <Aktivitet />
+    element: <Blog />
   },
+  {
+    path: "/og",
+    element: <Aktivitet />
+  }
 
 ]);
 

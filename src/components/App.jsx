@@ -8,10 +8,10 @@ const App = () => {
 
   return(
     <>
-      <Navbar />
+      <Navbar bg={"[#E09A32]"} />
       <Parallax />
       <LandingInfo />
-      <Footer bg={"white"} />
+      <Footer />
     </>
   );
 }

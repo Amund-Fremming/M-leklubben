@@ -70,7 +70,7 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
                         </motion.p>
                     </div>
 
-                    <div className="pt-20 w-full m-4 flex sm:w-[750px] md:w-[350px] lg:w-[450px] xl:w-[33vw] justify-center items-center hover:scale-110 duration-200">
+                    <div className="pt-20 m-4 flex w-[300px]  sm:w-[400px] md:w-[350px] lg:w-[450px] xl:w-[33vw] justify-center items-center hover:scale-110 duration-200">
                         <motion.img
                             ref={ref2}
                             variants={boxVariants(1.2)}

@@ -32,7 +32,7 @@ const Parallax = () => {
     };
 
     return(
-        <div className="w-full h-screen pt-20">
+        <div className="w-full pt-20">
             {/* Denne delen vises fra md -> xl */}
             <section className='bg-[#007B8E] sm:hidden overflow-hidden z-10 relative md:flex lg:flex xl:flex justify-center items-center h-screen hidden w-full'>
                 <img
