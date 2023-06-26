@@ -46,23 +46,17 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay }) => {
 
     const handleLes = () => {
         if(knappTekst === "Les mer") {
-            // gjøre minibilde hidden
-            // sette inn stort bilde
-            // Sette inn blog tekst
             setKnappTekst("Les mindre");
             setMinibildeVisibility(false);
             setTekstVisibility(true);
             setStortbildeVisibility(true);
         } else {
-            // fjerne stort bilde
-            // sette visible til lite bilde
-            // sette blog tekst til hidden
             setKnappTekst("Les mer");
             setMinibildeVisibility(true);
             setTekstVisibility(false);
             setStortbildeVisibility(false);
         }
-    } 
+    }
 
     return(
         <motion.div
@@ -77,16 +71,16 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay }) => {
                     <p>{dato}</p>
                     <p className=" text-[#DADADB] text-">"<i>{bio}"</i></p>
 
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap justify-between">
                         {/* Når les mer trykkes */}
-                        <p className={`mt-6 ${tekstVisibility === true ? "flex" : "hidden"} w-full lg:w-[60%] xl:w-[60%] mr-6`}>{tekst}</p>
+                        <p className={`mt-6 ${tekstVisibility === true ? "flex" : "hidden"} w-full md:w-[80%] lg:w-[40%] xl:w-[50%] mr-3`}>{tekst}</p>
                         <img src={bilde} className={`${stortbildeVisibility === true ? "flex" : "hidden"} object-cover w-[250px] lg:w-[300px] xl:w-[300px] rounded-md m-2 mt-8`} />
                     </div>
 
 
                     <input onClick={handleLes} className={`${bgLesMer ? "bg-ocean-blue" : "bg-ggg" } rounded-xl h-8 w-24 mt-12 px-2 cursor-pointer`} type="button" value={knappTekst} />
                 </div>
-                <img src={bilde} className={`${minibildeVisibility === true ? "flex" : "hidden"} w-[100px] object-cover rounded-md mr-3`} />
+                <img src={bilde} className={`${minibildeVisibility === true ? "flex" : "hidden"} h-[130px] object-cover rounded-md mr-3`} />
             </div>
         </motion.div>
     );

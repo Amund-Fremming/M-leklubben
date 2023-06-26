@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landmaaling from './components/Landmaaling';
 import Aktivitet from './components/Aktivitet';
 import Blog from "./components/Blog";
+import Admin from "./components/Admin";
+import { AuthContextProvider } from './components/AuthContext';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/og",
     element: <Aktivitet />
+  },
+  {
+    path: "/admin",
+    element: <AuthContextProvider><Admin /></AuthContextProvider>
   }
 
 ]);

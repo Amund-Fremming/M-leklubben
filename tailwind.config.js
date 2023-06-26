@@ -12,7 +12,7 @@ module.exports = {
         "ggg": "#2E2E33",
       },
       fontFamily: {
-        'acme': ['Acme', 'sans-serif'],
+        
       },
     },
   },

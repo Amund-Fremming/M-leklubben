@@ -54,7 +54,7 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
                             initial="hidden"
                             variants={boxVariants(0)}
                             animate={control}
-                            className={`${styles.heroHeadText} xs:pt-8  xs:text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl pb-4 font-bold font-ac w-full text-4xl `}
+                            className={`${styles.heroHeadText}  pb-4 font-bold font-ac w-full text-4xl `}
                         >
                             {overskrift}
                         </motion.h2>

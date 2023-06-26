@@ -7,6 +7,7 @@ import Footer from "./Footer";
 
 const Landmaaling = () => {
 
+   // window.scrollTo(0, 0);
     document.body.style.backgroundColor = "white"
 
     const useInViewAnimation = (delay) => {

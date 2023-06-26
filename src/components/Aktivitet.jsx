@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import { storage } from "../firebase";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import Blogbox from "./Blogbox";
 
 let globalInit = false;
 
@@ -45,8 +44,6 @@ const Aktivitet = () => {
             <Navbar bg={"[#E09A32]"} />
             <div className="mt-20" />
 
-            <Blogbox />
-
             <input type="file" onChange={e => {
                 setImageUpload(e.target.files[0])
             }
@@ -54,13 +51,13 @@ const Aktivitet = () => {
             <input value="submit" className="bg-gray-500 h-10 w-32" type="button" onClick={uploadImage} />
 
             <input value="submit" className="bg-gray-700 h-10 w-32" type="button" onClick={() => {
-                console.log(imageList.length)
+                imageList.forEach(im => console.log(im));
             }} />
             <div className="mt-96" />
             {
                 imageList.map(url => {
                     return(
-                        <img className="w-[30%] m-10" src={url} />
+                        <img key={url} className="w-[30%] m-10" src={url} />
                     );
                 })
             }

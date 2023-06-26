@@ -77,11 +77,11 @@ const Parallax = () => {
                     id="snow"
                 />
                 <img
-                    className='absolute md:top-[780px] lg:top-[730px] xl:top-[700px] pointer-events-none'
+                    className='absolute top-[740px] sm:top-[740px] md:top-[780px] lg:top-[730px] xl:top-[700px] pointer-events-none'
                     src={require("../images/snow.png")}
                     alt="snow"
                     id="snow"
-                />
+                    />
             </section>
             {/* Denne delen vises fra sm/mobile */}
             <section className="overflow-hidden top-0 relative md:hidden lg:hidden xl:hidden xxl:hidden sm:flex xs:flex h-screen flex justify-center items-center w-full">
