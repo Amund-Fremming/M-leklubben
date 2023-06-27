@@ -8,33 +8,33 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay, deletePost, id })
 
   const { user } = UserAuth();
 
-    const useInViewAnimation = (delay) => {
-        const control = useAnimation();
-        const [ref, inView] = useInView();
-      
-        const boxVariants = {
-          hidden: {
-            opacity: 0,
-            y: 45
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.8,
-              delay: delay,
-              typeof: "spring"
-            }
-          }
-        };
-      
-        useEffect(() => {
-          if(inView) {
-            control.start("visible");
-          }
-        }, [control, inView]);
-      
-        return { ref, variants: boxVariants, initial: 'hidden', animate: control };
+  const useInViewAnimation = (delay) => {
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+
+    const boxVariants = {
+      hidden: {
+        opacity: 0,
+        y: 45
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.8,
+          delay: delay,
+          typeof: "spring"
+        }
+      }
+    };
+    
+      useEffect(() => {
+        if(inView) {
+          control.start("visible");
+        }
+      }, [control, inView]);
+    
+      return { ref, variants: boxVariants, initial: 'hidden', animate: control };
     }
 
     const [bgLesMer, setBgLesMer] = useState(false);
@@ -66,7 +66,7 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay, deletePost, id })
             {...useInViewAnimation(delay)}
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOver}
-            className="block bg-ggg my-5 p-6 w-[90%] rounded-xl"
+            className="block bg-ggg my-2 overflow-hidden p-6 w-[90%] rounded-xl"
         >     <div className="flex justify-between">
                 <h1 className="font-medium text-white text-xl">{overskrift}</h1>
                 {
@@ -83,13 +83,13 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay, deletePost, id })
                     <div className="flex flex-wrap justify-between">
                         {/* Når les mer trykkes */}
                         <p className={`mt-6 ${tekstVisibility === true ? "flex" : "hidden"} w-full md:w-[80%] lg:w-[40%] xl:w-[50%] mr-3`}>{tekst}</p>
-                        <img src={bilde} className={`${stortbildeVisibility === true ? "flex" : "hidden"} object-cover w-[250px] lg:w-[300px] xl:w-[300px] rounded-md m-2 mt-8`} />
+                        <img src={bilde} alt={bilde} className={`${stortbildeVisibility === true ? "flex" : "hidden"} object-cover w-[250px] lg:w-[300px] xl:w-[300px] rounded-md m-2 mt-8`} />
                     </div>
 
 
                     <input onClick={handleLes} className={`${bgLesMer ? "bg-ocean-blue" : "bg-ggg" } rounded-xl h-8 w-24 mt-12 px-2 cursor-pointer`} type="button" value={knappTekst} />
                 </div>
-                <img src={bilde} className={`${minibildeVisibility === true ? "flex" : "hidden"} h-[130px] object-cover rounded-md mr-3`} />
+                <img src={bilde} alt={bilde} className={`${minibildeVisibility === true ? "flex" : "hidden"} h-[130px] object-cover rounded-md mr-3`} />
             </div>
         </motion.div>
     );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import { styles } from "./styles";
 import Footer from "./Footer";
 import { storage } from "../firebase";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
@@ -10,6 +9,10 @@ import { AuthContextProvider } from './AuthContext';
 let globalInit = false;
 
 const Aktivitet = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const [imageList, setImageList] = useState([]);
     const [imageUpload, setImageUpload] = useState(null);
@@ -60,7 +63,7 @@ const Aktivitet = () => {
             {
                 imageList.map(url => {
                     return(
-                        <img key={url} className="w-[30%] m-10" src={url} />
+                        <img alt={url} key={url} className="w-[30%] m-10" src={url} />
                     );
                 })
             }

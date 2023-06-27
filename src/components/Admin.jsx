@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "./AuthContext";
 import { AuthContextProvider } from './AuthContext';
+
+document.body.style.backgroundColor = "#1D1E20";
 
 const Admin = () => {
 
@@ -12,6 +14,9 @@ const Admin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    /**
+     * Bruker AuthContext.jsx og kaller på metoder definert der fra firebase biblioteket
+     */
     const signOutAuth = async () => {
         try {
             await logout();
@@ -22,6 +27,9 @@ const Admin = () => {
         }
     };
 
+    /**
+     * Bruker AuthContext.jsx og kaller på metoder definert der fra firebase biblioteket
+     */
     const signInAuth = async (e) => {
         e.preventDefault();
         try {
@@ -33,6 +41,7 @@ const Admin = () => {
         }
     }
 
+    // Grunnen til at Navbar blir wrappet med AuthContextProvider er fordi det er en beskyttet rute i navbaren.
     return(
     <>
         <AuthContextProvider>

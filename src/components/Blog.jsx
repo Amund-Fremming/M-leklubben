@@ -6,19 +6,21 @@ import Blogbox from "./Blogbox";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContextProvider } from "./AuthContext";
+import { Audio } from 'react-loader-spinner';
 
 document.body.style.backgroundColor = "#1D1E20";
-let globalInit = false;
 
 const Blog = () => {
 
     const [blogposts, setBlogposts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const postsCollectionRef = collection(db, "posts");
 
     useEffect(() => {
         const getPosts = async () => {
             const data = await getDocs(postsCollectionRef);
             setBlogposts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            setLoading(false);
         }
 
         getPosts();
@@ -30,24 +32,28 @@ const Blog = () => {
         window.location.reload(false);
     }
 
+    if(loading) {
+        return(
+            <div className="flex justify-center items-center h-screen w-full">
+            <Audio
+                height="80"
+                width="80"
+                radius="9"
+                color="gray"
+                ariaLabel="loading"
+                wrapperStyle
+                wrapperClass
+            />
+        </div>
+        )
+    }
+
     return(
         <>
             <AuthContextProvider>
                 <Navbar bg={"[#E09A32]"} />
             </AuthContextProvider>
             <div className="bg-[#1D1E20] pt-32 flex pb-64">
-
-                {/* Sidebar */}
-                <div className="mt-12 hidden md:flex md:flex-col l-0 bg-[#1D1E20] min-h-[100%] w-[20vw]">
-                    <div className="absolute min-h-[100%] w-[3px] bg-[#2E2E33] ml-[20vw]" />
-                    <h2 className={`${styles.heroSubTextWhite} pt-10 ml-[4vw]`}>{/* Content */}</h2>
-                    <ul className="list-disc ml-[9vw] text-semi-white font-medium cursor-pointer">
-                        {/* Her hopper du direkte til #id med <a>, må da lagres id på alle elementer under som itereres fra db */}
-                        {/*<li>dag1</li>
-                        <li>dag2</li>
-    <li>dag3</li>*/}
-                    </ul>
-                </div>
 
                 {/* Hovedseksjon */}
                 <div className="bg-[#1D1E20] ml-[3px] flex flex-col pl-[10vw] w-full min-h-[100%]">

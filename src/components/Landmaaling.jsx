@@ -8,7 +8,10 @@ import { AuthContextProvider } from './AuthContext';
 
 const Landmaaling = () => {
 
-   // window.scrollTo(0, 0);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     document.body.style.backgroundColor = "white"
 
     const useInViewAnimation = (delay) => {

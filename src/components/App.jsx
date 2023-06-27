@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Parallax from "./Parallax";
 import LandingInfo from "./LandingInfo";
 import Navbar from "./Navbar";
@@ -8,6 +8,10 @@ import { AuthContextProvider } from './AuthContext';
 const App = () => {
 
   document.body.style.backgroundColor = "white";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return(
     <>
