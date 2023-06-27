@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { storage } from "../firebase";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
+import { AuthContextProvider } from './AuthContext';
 
 let globalInit = false;
 
@@ -41,7 +42,9 @@ const Aktivitet = () => {
 
     return(
         <div className="bg-[#1D1E20]">
+        <AuthContextProvider>
             <Navbar bg={"[#E09A32]"} />
+        </AuthContextProvider>
             <div className="mt-20" />
 
             <input type="file" onChange={e => {

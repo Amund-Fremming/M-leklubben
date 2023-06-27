@@ -3,8 +3,11 @@ import { NavLink } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 import Menu from "../icons/Menu";
 import Close from "../icons/Close";
+import { UserAuth } from './AuthContext';
 
 const Navbar = ({ bg }) => {
+
+    const { user } = UserAuth();
 
     let [ open, setOpen ] = useState(false);
 
@@ -50,6 +53,15 @@ const Navbar = ({ bg }) => {
                                 <p className='font-marker hover:text-red-600 duration-500'>Admin</p>
                             </NavLink>
                         </li>
+                        {
+                            user ?
+                            <li className='md:ml-8 text-xl md:my-0 my-7'>
+                                <NavLink to="/createpost">
+                                    <p className='font-marker hover:text-red-600 duration-500'>create-post</p>
+                                </NavLink>
+                            </li>
+                            : <li></li>
+                        }
                         <li className='md:ml-8 text-2xl md:my-0 my-7'>
                             <a href="https://www.instagram.com/hvl_maleklubb/">
                                 <BsInstagram className='hover:text-red-600 duration-500' />

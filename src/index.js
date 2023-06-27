@@ -9,6 +9,8 @@ import Aktivitet from './components/Aktivitet';
 import Blog from "./components/Blog";
 import Admin from "./components/Admin";
 import { AuthContextProvider } from './components/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import CreatePost from './components/CreatePost';
 
 const router = createBrowserRouter([
   {
@@ -29,9 +31,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <AuthContextProvider><Admin /></AuthContextProvider>
-  }
-
+    element:
+      <AuthContextProvider>
+        <Admin />
+      </AuthContextProvider>
+  },
+  {
+    path: "/createpost",
+    element: 
+      <AuthContextProvider>
+        <ProtectedRoute>
+          <CreatePost />
+        </ProtectedRoute>
+      </AuthContextProvider>
+    },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

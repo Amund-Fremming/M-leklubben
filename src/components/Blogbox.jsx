@@ -2,8 +2,11 @@ import React,{ useState, useEffect } from "react";
 import 'tailwindcss/tailwind.css';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { UserAuth } from "./AuthContext";
 
-const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay }) => {
+const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay, deletePost, id }) => {
+
+  const { user } = UserAuth();
 
     const useInViewAnimation = (delay) => {
         const control = useAnimation();
@@ -64,8 +67,14 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay }) => {
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOver}
             className="block bg-ggg my-5 p-6 w-[90%] rounded-xl"
-        >
+        >     <div className="flex justify-between">
                 <h1 className="font-medium text-white text-xl">{overskrift}</h1>
+                {
+                  user !== null
+                  ? <button onClick={() => deletePost(id)} className="">X</button>
+                  : <></>
+                }
+              </div>
             <div className="flex justify-between text-white w-full">
                 <div className="flex flex-col h-full">
                     <p>{dato}</p>

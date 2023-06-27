@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { styles } from "./styles";
 import Footer from "./Footer";
+import { AuthContextProvider } from './AuthContext';
 
 const Landmaaling = () => {
 
@@ -41,7 +42,9 @@ const Landmaaling = () => {
 
     return(
         <>
-            <Navbar bg={"[#E09A32]"} />
+            <AuthContextProvider>
+                <Navbar bg={"[#E09A32]"} />
+            </AuthContextProvider>
             <div className="mt-20" />
             <div className="flex justify-center items-center">
                 <img
