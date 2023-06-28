@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { styles } from "./styles";
+import { styles } from "../util/styles";
 import Footer from "./Footer";
-import { AuthContextProvider } from './AuthContext';
+import { AuthContextProvider } from '../util/AuthContext';
 
 const Landmaaling = () => {
 

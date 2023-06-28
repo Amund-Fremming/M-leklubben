@@ -8,8 +8,8 @@ import Landmaaling from './components/Landmaaling';
 import Aktivitet from './components/Aktivitet';
 import Blog from "./components/Blog";
 import Admin from "./components/Admin";
-import { AuthContextProvider } from './components/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import { AuthContextProvider } from './util/AuthContext';
+import ProtectedRoute from './util/ProtectedRoute';
 import CreatePost from './components/CreatePost';
 
 const router = createBrowserRouter([

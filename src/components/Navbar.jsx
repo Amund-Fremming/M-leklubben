@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 import Menu from "../icons/Menu";
 import Close from "../icons/Close";
-import { UserAuth } from './AuthContext';
+import { UserAuth } from '../util/AuthContext';
 
 const Navbar = ({ bg }) => {
 

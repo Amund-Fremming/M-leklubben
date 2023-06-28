@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import "./landing.css";
-import "./landing2.css"
+import "./css/landing.css";
+import "./css/landing2.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { styles } from "./styles";
+import { styles } from "../util/styles";
 
 const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
 

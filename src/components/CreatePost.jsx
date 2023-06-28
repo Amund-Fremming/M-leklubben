@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import { styles } from "./styles";
+import { styles } from "../util/styles";
 import { addDoc , collection} from "firebase/firestore";
 import { db } from "../firebase";
 import { v4 } from "uuid";
 import { storage } from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { AuthContextProvider } from './AuthContext';
+import { AuthContextProvider } from '../util/AuthContext';
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
-
-    document.body.style.backgroundColor = "#1D1E20";
 
     const [header, setHeader] = useState("");
     const [intro, setIntro] = useState("");
@@ -19,14 +18,19 @@ const CreatePost = () => {
     const [imageUpload, setImageUpload] = useState(null);
 
     const postsCollectionRef = collection(db, "posts");
+    const navigate = useNavigate();
 
+    /**
+     * Denne laster opp ett bilde/fil til firebase storage.
+     * Bruker Promise slik at vi må vente på funksjonen til å sende tilbake resolve eller reject
+     * slik at vi kan kalle på add doc for å laste opp tekst til databasen sammen med bilde urlen vi får her.
+     */
     const uploadImage = () => {
         return new Promise((resolve, reject) => {
             if(imageUpload == null) return;
             const imageRef = ref(storage, `images/${imageUpload.name + v4()}`)
             uploadBytes(imageRef, imageUpload).then(snapshot => {
                 getDownloadURL(snapshot.ref).then(url => {
-                    console.log(url);
                     resolve(url);
                 })
             }).catch(error => {
@@ -36,6 +40,9 @@ const CreatePost = () => {
         });
     }    
 
+    /**
+     * bruker addDoc fra firebase for å lagre data til databasen.
+     */
     const createPost = async () => {
         const imageURL = await uploadImage();
 
@@ -47,7 +54,7 @@ const CreatePost = () => {
             url: imageURL
         });
 
-        window.location.reload(false);
+        navigate("/aktivitet");
     }
 
     return(
@@ -57,7 +64,7 @@ const CreatePost = () => {
             </AuthContextProvider>
 
             <div className="justify-center items-center flex h-screen w-full">
-                <div className="shadow-md rounded-md bg-white w-[600px] h-[600px] p-6 flex flex-col">
+                <div className="shadow-md rounded-md bg-gray-200 w-[600px] h-[600px] p-6 flex flex-col">
                     <h1 className={`p-2 ${styles.heroHeadText}`}>
                         Create
                     </h1>

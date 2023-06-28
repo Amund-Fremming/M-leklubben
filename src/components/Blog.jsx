@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import { styles } from "./styles";
+import { styles } from "../util/styles";
 import Footer from "./Footer";
 import Blogbox from "./Blogbox";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
-import { AuthContextProvider } from "./AuthContext";
+import { AuthContextProvider } from "../util/AuthContext";
 import { Audio } from 'react-loader-spinner';
-
-document.body.style.backgroundColor = "#1D1E20";
 
 const Blog = () => {
 
@@ -56,15 +54,9 @@ const Blog = () => {
             <div className="bg-[#1D1E20] pt-32 flex pb-64">
 
                 {/* Hovedseksjon */}
-                <div className="bg-[#1D1E20] ml-[3px] flex flex-col pl-[10vw] w-full min-h-[100%]">
+                <div className="bg-[#1D1E20] flex flex-col px-[3vw] w-full min-h-[100%]">
                     <h1 className={`${styles.heroHeadTextWhite}`}>Aktivitet</h1>
                     <h3 className={`${styles.sectionSubTextWhite}`}>Hva vi har gjort den siste tiden</h3>
-
-                    {/**
-                     * 
-                     * Når du looper over antall innlegg fra databasen, legg in delay på de 3 /fire første innleggene så de laster pent etter hverandre, resten kan ha delay 0.2
-                     * 
-                     */}
                     {
                         blogposts.map(post => (
                             <AuthContextProvider>
@@ -73,7 +65,6 @@ const Blog = () => {
                         ))
                     }
                 </div>
-
             </div>
             <Footer />
         </>

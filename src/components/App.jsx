@@ -3,7 +3,7 @@ import Parallax from "./Parallax";
 import LandingInfo from "./LandingInfo";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { AuthContextProvider } from './AuthContext';
+import { AuthContextProvider } from '../util/AuthContext';
 
 const App = () => {
 

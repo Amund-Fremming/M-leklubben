@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import { storage } from "../firebase";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import { AuthContextProvider } from './AuthContext';
+import { AuthContextProvider } from '../util/AuthContext';
 
 let globalInit = false;
 

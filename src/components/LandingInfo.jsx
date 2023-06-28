@@ -1,5 +1,5 @@
 import React from "react";
-import "./landing.css";
+import "./css/landing.css";
 import InfoSeksjon from "./InfoSeksjon";
 
 const LandingInfo = ({ bilde, tekst }) => {
