@@ -63,7 +63,7 @@ const CreatePost = () => {
                 <Navbar bg={"[#E09A32]"} />
             </AuthContextProvider>
 
-            <div className="justify-center items-center flex h-screen w-full">
+            <div className="justify-center bg-[#E2DFD2] items-center flex h-screen w-full">
                 <div className="shadow-md rounded-md bg-gray-200 w-[600px] h-[600px] p-6 flex flex-col">
                     <h1 className={`p-2 ${styles.heroHeadText}`}>
                         Create

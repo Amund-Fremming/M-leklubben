@@ -45,7 +45,7 @@ const Admin = () => {
         <AuthContextProvider>
             <Navbar bg={"[#E09A32]"} />
         </AuthContextProvider>
-        <div className="justify-center items-center flex w-full h-screen">
+        <div className="justify-center bg-[#E2DFD2] items-center flex w-full h-screen">
             <form className="md:w-[400px] lg:w-[400px] xl:w-[400px] sm:w-[300px] w-[350px] mx-auto bg-gray-200 p-6 rounded shadow-md">
                 <h2 className="text-2xl font-bold mb-4">{user !== null ? "Already logged in" : "Login"}</h2>
                 <div className="mb-4">
