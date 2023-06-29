@@ -44,6 +44,12 @@ const Navbar = ({ bg }) => {
                             </NavLink>
                         </li>
                         <li className='md:ml-8 text-xl md:my-0 my-7'>
+                            <p onClick={() => {
+                                const element = document.getElementById("kontakt");
+                                element.scrollIntoView({ behavior: "smooth" });
+                            }} className='font-marker hover:text-red-600 duration-500 cursor-pointer'>Kontakt</p>
+                        </li>
+                        <li className='md:ml-8 text-xl md:my-0 my-7'>
                             <NavLink to="/landmaaling">
                                 <p className='font-marker hover:text-red-600 duration-500'>Landmåling</p>
                             </NavLink>

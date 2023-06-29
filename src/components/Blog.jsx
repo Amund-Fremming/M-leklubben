@@ -17,7 +17,10 @@ const Blog = () => {
     useEffect(() => {
         const getPosts = async () => {
             const data = await getDocs(postsCollectionRef);
-            setBlogposts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            const fetchedPosts = data.docs.map((doc) => ({...doc.data(), id: doc.id}));
+            const sortedPosts = fetchedPosts.sort((a, b) => (new Date(b.dato) - new Date(a.dato)));
+
+            setBlogposts(sortedPosts);
             setLoading(false);
         }
 
@@ -51,12 +54,12 @@ const Blog = () => {
             <AuthContextProvider>
                 <Navbar bg={"[#E09A32]"} />
             </AuthContextProvider>
-            <div className="bg-[#1D1E20] pt-32 flex pb-64">
+            <div className="bg-[#E2DFD2] pt-32 flex pb-64">
 
                 {/* Hovedseksjon */}
-                <div className="bg-[#1D1E20] flex flex-col px-[3vw] w-full min-h-[100%]">
-                    <h1 className={`${styles.heroHeadTextWhite}`}>Aktivitet</h1>
-                    <h3 className={`${styles.sectionSubTextWhite}`}>Hva vi har gjort den siste tiden</h3>
+                <div className="bg-[#E2DFD2] flex flex-col justify-center items-center px-[3vw] w-full min-h-[100%]">
+                    <h1 className={`${styles.heroHeadText} pr-[45%]`}>Aktivitet</h1>
+                    <h3 className={`${styles.sectionSubText} pr-[45%]`}>Hva vi har gjort den siste tiden</h3>
                     {
                         blogposts.map(post => (
                             <AuthContextProvider>

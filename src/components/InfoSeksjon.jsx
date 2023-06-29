@@ -32,13 +32,9 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
     useEffect(() => {
         if(inView) {
             control.start("visible");
-        } else {
-            control.start("hidden");
         }
         if(inView2) {
             control2.start("visible");
-        } else {
-            control2.start("hidden");
         }
     }, [control, inView, control2, inView2]);
 

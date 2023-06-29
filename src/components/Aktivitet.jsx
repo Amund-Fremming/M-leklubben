@@ -6,6 +6,7 @@ import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import { AuthContextProvider } from '../util/AuthContext';
 
+// Brukes for at siden ikke skal lastes inn dobbelt slik at det blir dupolikat av alle bildene.
 let globalInit = false;
 
 const Aktivitet = () => {

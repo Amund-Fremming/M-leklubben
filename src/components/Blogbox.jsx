@@ -70,7 +70,7 @@ const Blogbox = ({ overskrift, dato, bilde, tekst, bio, delay, deletePost, id })
             {...useInViewAnimation(delay)}
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOver}
-            className="block bg-ggg my-2 overflow-hidden p-6 w-[97%] sm:w-[95%] md:w-[90%] lg:w-[70%] xl:w-[70%] rounded-xl"
+            className="block bg-[#616D3D] my-6 shadow-xl overflow-hidden p-6 w-[97%] sm:w-[95%] md:w-[90%] lg:w-[70%] xl:w-[70%] rounded-xl"
         >     <div className="flex justify-between">
                 <h1 className="pr-2 font-medium text-white text-xl">{overskrift}</h1>
                 {

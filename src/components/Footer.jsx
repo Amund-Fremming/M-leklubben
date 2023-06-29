@@ -13,7 +13,7 @@ const Footer = ({ bg }) => {
                 </div>
             </section>
 
-            <div className="w-full bg-[#9097f5] h-32 px-[10vw] md:px-[20vw] lg:px-[20vw] xl:px-[25vw]">
+            <div id="kontakt" className="w-full bg-[#9097f5] h-32 px-[10vw] md:px-[20vw] lg:px-[20vw] xl:px-[25vw]">
                 <div className={`flex flex-col justify-start items-start bg-[#9097f5]`}>
                     <h2 className={`${styles.heroSubText} mb-4`}>Kontakt</h2>
                     <p><b>Leder:</b> Amund Ruud</p>

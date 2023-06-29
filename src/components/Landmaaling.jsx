@@ -14,6 +14,13 @@ const Landmaaling = () => {
 
     document.body.style.backgroundColor = "white"
 
+    const scrollToElement = (id) => {
+        const element = document.getElementById(id);
+        if(element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
     const useInViewAnimation = (delay) => {
         const control = useAnimation();
         const [ref, inView] = useInView();
@@ -49,7 +56,7 @@ const Landmaaling = () => {
                 <Navbar bg={"[#E09A32]"} />
             </AuthContextProvider>
             <div className="mt-20" />
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center bg-[#E2DFD2]">
                 <img
                     alt="landmaaler"
                     src={require("../images/gruppa/front.info.jpeg")}
@@ -57,7 +64,7 @@ const Landmaaling = () => {
                 />
             </div>
             
-            <div className="pb-64 flex justify-center items-center pt-6 px-[10vw] md:px-[20vw] lg:px-[20vw] xl:px-[25vw] top-10">
+            <div className="pb-64 flex justify-center bg-[#E2DFD2] items-center pt-6 px-[10vw] md:px-[20vw] lg:px-[20vw] xl:px-[25vw] top-10">
                 <div className="flex flex-col justify-center items-start">
 
                     <motion.h1
@@ -78,9 +85,9 @@ const Landmaaling = () => {
                         className={`${styles.sectionSubText} flex justify-center items-center space-x-7 pt-10`}
                         {...useInViewAnimation(0)}
                     >
-                        <li className="font-medium hover:underline underline cursor-pointer underline-offset-2"><b>Yrke</b></li>
-                        <li className="hover:underline cursor-pointer underline-offset-2"><b><a href="#utdanning">Utdanning</a></b></li>
-                        <li className="hover:underline cursor-pointer underline-offset-2"><b><a href="#lenker">Lenker</a></b></li>
+                        <li className="font-medium hover:underline underline cursor-pointer underline-offset-2"><b onClick={() => scrollToElement("yrke")}>Yrke</b></li>
+                        <li className="hover:underline cursor-pointer underline-offset-2"><b onClick={() => scrollToElement("utdanning")}>Utdanning</b></li>
+                        <li className="hover:underline cursor-pointer underline-offset-2"><b onClick={() => scrollToElement("lenker")}>Lenker</b></li>
                     </motion.ul>
 
                     <motion.p
