@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typewriter from "typewriter-effect";
 
 const Parallax = () => {
 
-    window.onload = () => {
-        window.addEventListener("scroll", () => {
+    useEffect(() => {
+        const scrollHandler = () => {
             let value = window.scrollY;
 
             /* For md -> xl */
@@ -28,8 +28,15 @@ const Parallax = () => {
             clouds.style.left = (value * 1.3) + "px";
             backgroundmobile.style.top = (200 - (value * 1)) + "px";
             lakehillmobile.style.top = (315 - (value * 0.8)) + "px";
-        });
-    };
+        };
+
+        window.addEventListener("scroll", scrollHandler);
+
+        // Cleanup function: remove the event listener when component is unmounted
+        return () => {
+            window.removeEventListener("scroll", scrollHandler);
+        };
+    }, []);
 
     return(
         <div className="w-full pt-20">

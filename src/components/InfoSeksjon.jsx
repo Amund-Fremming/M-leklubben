@@ -57,7 +57,7 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
 
                         <motion.p
                             ref={ref}
-                            variants={boxVariants(0.8)}
+                            variants={boxVariants(0)}
                             initial="hidden"
                             animate={control}
                             className={`${styles.sectionSubText}`}
@@ -69,7 +69,7 @@ const InfoSeksjon = ({ bilde, tekst, bakgrunn, overskrift }) => {
                     <div className="pt-20 m-4 flex w-[300px]  sm:w-[400px] md:w-[350px] lg:w-[450px] xl:w-[33vw] justify-center items-center hover:scale-110 duration-200">
                         <motion.img
                             ref={ref2}
-                            variants={boxVariants(1.2)}
+                            variants={boxVariants(0)}
                             initial="hidden"
                             animate={control2}
                             className="object-cover rounded-xl md:w-[500px] lg:w-[700px] xl:w-[700px] shadow-slate-800 shadow-2xl w-[90%]"
